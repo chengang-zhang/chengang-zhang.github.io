@@ -1,4 +1,11 @@
 .App {
+  text-align: left;
+}
+
+.App h2 {
+  text-align: center;
+}
+.App h3 {
   text-align: center;
 }
 
@@ -35,4 +42,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+body { 
+  padding-top: 20px;
+  padding-bottom: 100px; 
 }
