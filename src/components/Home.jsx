@@ -17,7 +17,7 @@ function Home() {
             <h1 className="font-weight-bold">Hey, I'm Cheng!</h1>
             <br></br>
             <p>
-              I'm a 3rd year computer science student at NYU Shanghai, with the hopes of becoming a Software Engineer post grad.
+              I'm a software engineer working at Expedia Group in Seattle.
 
               <br></br>
               <br></br>
