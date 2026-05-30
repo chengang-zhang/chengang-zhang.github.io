@@ -2,17 +2,33 @@ import { SocialIcon } from "react-social-icons";
 
 function Footer() {
   return (
-    <div className="footer">
-      <footer className="py-5 bg-dark fixed-bottom">
-        <div className="container">
-          <p className="m-0 text-right text-white">
-            <SocialIcon url="mailto: cz1842@nyu.edu" network="email" fgColor="white" />
-            <SocialIcon url="https://linkedin.com/in/chengang-zhang" fgColor="white"/>
-            <SocialIcon url="https://github.com/chengang-zhang" fgColor="white"/>
-          </p>
+    <footer className="site-footer">
+      <div className="container site-footer-inner">
+        <p className="site-footer-text">Chengang Zhang</p>
+
+        <div className="site-social-links" aria-label="Social links">
+          <SocialIcon
+            bgColor="#2f343b"
+            fgColor="#f8fafc"
+            network="email"
+            style={{ height: 38, width: 38 }}
+            url="mailto: cz1842@nyu.edu"
+          />
+          <SocialIcon
+            bgColor="#2f343b"
+            fgColor="#f8fafc"
+            style={{ height: 38, width: 38 }}
+            url="https://linkedin.com/in/chengang-zhang"
+          />
+          <SocialIcon
+            bgColor="#2f343b"
+            fgColor="#f8fafc"
+            style={{ height: 38, width: 38 }}
+            url="https://github.com/chengang-zhang"
+          />
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   );
 }
 

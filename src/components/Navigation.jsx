@@ -2,59 +2,39 @@ import { Link, useLocation } from "react-router-dom";
 
 function Navigation() {
   const location = useLocation();
+  const navItems = [
+    { path: "/", label: "Home" },
+    { path: "/projects", label: "Projects" },
+    { path: "/cv", label: "CV" },
+    { path: "/photography", label: "Photography" },
+  ];
 
   return (
-    <div className="navigation">
-      <nav className="navbar navbar-expand navbar-dark bg-dark fixed-top">
-        <div className="container">
-          <Link className="navbar-brand" to="/">
-            Chengang Zhang
-          </Link>
+    <header className="site-header">
+      <nav className="container site-nav" aria-label="Primary navigation">
+        <Link className="site-brand" to="/">
+          Chengang Zhang
+        </Link>
 
-          <div>
-            <ul className="navbar-nav ml-auto">
-              <li
-                className={`nav-item  ${
-                  location.pathname === "/" ? "active" : ""
-                }`}
-              >
-                <Link className="nav-link" to="/">
-                  Home
-                  <span className="sr-only">(current)</span>
+        <ul className="site-nav-list">
+          {navItems.map((item) => {
+            const isActive = location.pathname === item.path;
+
+            return (
+              <li key={item.path}>
+                <Link
+                  aria-current={isActive ? "page" : undefined}
+                  className={`site-nav-link${isActive ? " active" : ""}`}
+                  to={item.path}
+                >
+                  {item.label}
                 </Link>
               </li>
-              <li
-                className={`nav-item  ${
-                  location.pathname === "/projects" ? "active" : ""
-                }`}
-              >
-                <Link className="nav-link" to="/projects">
-                  Projects
-                </Link>
-              </li>
-              <li
-                className={`nav-item  ${
-                  location.pathname === "/cv" ? "active" : ""
-                }`}
-              >
-                <Link className="nav-link" to="/cv">
-                  CV
-                </Link>
-              </li>
-              <li
-                className={`nav-item  ${
-                  location.pathname === "/photography" ? "active" : ""
-                }`}
-              >
-                <Link className="nav-link" to="/photography">
-                  Photography
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
+            );
+          })}
+        </ul>
       </nav>
-    </div>
+    </header>
   );
 }
 
