@@ -1,51 +1,52 @@
-import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-function Navigation(props) {
+function Navigation() {
+  const location = useLocation();
+
   return (
     <div className="navigation">
-      <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top" >
-        <div class="container">
-          <Link class="navbar-brand" to="/">
+      <nav className="navbar navbar-expand navbar-dark bg-dark fixed-top">
+        <div className="container">
+          <Link className="navbar-brand" to="/">
             Chengang Zhang
           </Link>
 
           <div>
-            <ul class="navbar-nav ml-auto">
+            <ul className="navbar-nav ml-auto">
               <li
-                class={`nav-item  ${
-                  props.location.pathname === "/" ? "active" : ""
+                className={`nav-item  ${
+                  location.pathname === "/" ? "active" : ""
                 }`}
               >
-                <Link class="nav-link" to="/">
+                <Link className="nav-link" to="/">
                   Home
-                  <span class="sr-only">(current)</span>
+                  <span className="sr-only">(current)</span>
                 </Link>
               </li>
               <li
-                class={`nav-item  ${
-                  props.location.pathname === "/projects" ? "active" : ""
+                className={`nav-item  ${
+                  location.pathname === "/projects" ? "active" : ""
                 }`}
               >
-                <Link class="nav-link" to="/projects">
+                <Link className="nav-link" to="/projects">
                   Projects
                 </Link>
               </li>
               <li
-                class={`nav-item  ${
-                  props.location.pathname === "/cv" ? "active" : ""
+                className={`nav-item  ${
+                  location.pathname === "/cv" ? "active" : ""
                 }`}
               >
-                <Link class="nav-link" to="/cv">
+                <Link className="nav-link" to="/cv">
                   CV
                 </Link>
               </li>
               <li
-                class={`nav-item  ${
-                  props.location.pathname === "/photography" ? "active" : ""
+                className={`nav-item  ${
+                  location.pathname === "/photography" ? "active" : ""
                 }`}
               >
-                <Link class="nav-link" to="/photography">
+                <Link className="nav-link" to="/photography">
                   Photography
                 </Link>
               </li>
@@ -57,4 +58,4 @@ function Navigation(props) {
   );
 }
 
-export default withRouter(Navigation);
+export default Navigation;
