@@ -119,6 +119,8 @@ function Photography() {
               <p className="m-2 text-center">
                 Huangpu, Shanghai, China - September 2019
               </p>
+          </div>
+          <div className="col-lg-6">
           <h2 className="font-weight-light">Yu Garden<br></br>（豫园）</h2>
               <img
                 className="img-fluid rounded mb-4 mb-lg-0"
@@ -128,53 +130,6 @@ function Photography() {
               <p className="m-2 text-center">
                 Huangpu, Shanghai, China - September 2019
               </p>
-            <h2 className="font-weight-light">NYU Shanghai Teddy Bear</h2>
-              <img
-                className="img-fluid rounded mb-4 mb-lg-0"
-                src="https://live.staticflickr.com/65535/33849794938_f1429a0c0e_h.jpg"
-                alt=""
-              />
-              <p className="m-2 text-center">
-                Shanghai, China - April 2019
-              </p>
-            <h2 className="font-weight-light">East Nanjing Rd. <br></br>（南京东路）</h2>
-              <img
-                className="img-fluid rounded mb-4 mb-lg-0"
-                src="https://live.staticflickr.com/65535/46810354845_4dcc324e29_c.jpg"
-                alt=""
-              />
-              <p className="m-2 text-center">
-                Shanghai, China - April 2019
-              </p>
-              <h2 className="font-weight-light">Suzhou <br></br>（苏州）</h2>
-              <img
-                className="img-fluid rounded mb-4 mb-lg-0"
-                src="https://live.staticflickr.com/65535/48852851652_8c7604a619_h.jpg"
-                alt=""
-              />
-              <p className="m-2 text-center">
-                Suzhou, Jiangsu Provience, China - October 2019
-              </p>
-            <h2 className="font-weight-light">Person Crossing Street</h2>
-              <img
-                className="img-fluid rounded mb-4 mb-lg-0"
-                src="https://live.staticflickr.com/65535/48775753167_e372cb8243_h.jpg"
-                alt=""
-              />
-              <p className="m-2 text-center">
-                Shanghai, China - August 2019
-              </p>
-              <h2 className="font-weight-light">Suzhou <br></br>（苏州）</h2>
-              <img
-                className="img-fluid rounded mb-4 mb-lg-0"
-                src="https://live.staticflickr.com/65535/48852850542_ab24b6c84f_h.jpg"
-                alt=""
-              />
-              <p className="m-2 text-center">
-                Suzhou, Jiangsu Provience, China - October 2019
-              </p>
-          </div>
-          <div className="col-lg-6">
           <h2 className="font-weight-light">Welcome Sign</h2>
               <img
                 className="img-fluid rounded mb-4 mb-lg-0"
@@ -282,60 +237,6 @@ function Photography() {
               />
               <p className="m-2 text-center">
                 Huangpu, Shanghai, China - September 2019
-              </p>
-            <h2 className="font-weight-light">The Bund<br></br>（外滩）</h2>
-              <img
-                className="img-fluid rounded mb-4 mb-lg-0"
-                src="https://live.staticflickr.com/65535/40760318813_91505fc89b_h.jpg"
-                alt=""
-              />
-              <p className="m-2 text-center">
-                Shanghai, China - April 2019
-              </p>
-            <h2 className="font-weight-light">Suzhou <br></br>（苏州）</h2>
-              <img
-                className="img-fluid rounded mb-4 mb-lg-0"
-                src="https://live.staticflickr.com/65535/48836335661_ea96c86e3b_h.jpg"
-                alt=""
-              />
-              <p className="m-2 text-center">
-                Suzhou, Jiangsu Province, China - October 2019
-              </p>
-              <h2 className="font-weight-light">Century Ave Station</h2>
-              <img
-                className="img-fluid rounded mb-4 mb-lg-0"
-                src="https://live.staticflickr.com/65535/48775749572_db6c2c32e9_h.jpg"
-                alt=""
-              />
-              <p className="m-2 text-center">
-                Shanghai, China - August 2019
-              </p>
-              <h2 className="font-weight-light">Eleme delivery man<br></br>（饿了么）</h2>
-              <img
-                className="img-fluid rounded mb-4 mb-lg-0"
-                src="https://live.staticflickr.com/65535/48775575071_9b29a03542_h.jpg"
-                alt=""
-              />
-              <p className="m-2 text-center">
-                Shanghai, China - August 2019
-              </p>
-              <h2 className="font-weight-light"> Houses in Suzhou<br></br>（苏州）</h2>
-              <img
-                className="img-fluid rounded mb-4 mb-lg-0"
-                src="https://live.staticflickr.com/65535/48852654571_108e5413cc_h.jpg"
-                alt=""
-              />
-              <p className="m-2 text-center">
-                Suzhou, Jiangsu Province, China - October 2019
-              </p>
-              <h2 className="font-weight-light"> Watertown in Suzhou<br></br>（苏州）</h2>
-              <img
-                className="img-fluid rounded mb-4 mb-lg-0"
-                src="https://live.staticflickr.com/65535/48852843487_e1b6f3f0f0_h.jpg"
-                alt=""
-              />
-              <p className="m-2 text-center">
-                Suzhou, Jiangsu Province, China - October 2019
               </p>
           </div>
           
