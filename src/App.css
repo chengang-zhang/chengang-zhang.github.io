@@ -159,6 +159,127 @@ body.lightbox-open {
   gap: 0.65rem;
 }
 
+.cv {
+  padding: 3rem 0 1rem;
+}
+
+.cv-hero {
+  border-bottom: 1px solid #dedbd4;
+  margin-bottom: 2rem;
+  max-width: 48rem;
+  padding-bottom: 1.5rem;
+}
+
+.cv-kicker {
+  color: #6b7077;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+}
+
+.cv-hero h1 {
+  color: #202326;
+  font-size: 2.65rem;
+  font-weight: 650;
+  line-height: 1.08;
+  margin: 0 0 0.75rem;
+}
+
+.cv-hero p:last-child {
+  color: #5c6067;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cv-layout {
+  align-items: start;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.36fr);
+}
+
+.cv-main,
+.cv-sidebar {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.cv-section {
+  background: #ffffff;
+  border: 1px solid #e2dfd8;
+  border-radius: 8px;
+  padding: 1.35rem;
+}
+
+.cv-section h2 {
+  color: #202326;
+  font-size: 0.78rem;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+  margin: 0 0 1.1rem;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.cv-section-stack {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.cv-entry {
+  border-top: 1px solid #ece9e2;
+  padding-top: 1.15rem;
+}
+
+.cv-entry:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.cv-entry-heading {
+  align-items: baseline;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 0.65rem;
+}
+
+.cv-entry-heading h3 {
+  color: #202326;
+  font-size: 1.04rem;
+  font-weight: 680;
+  margin: 0;
+  text-align: left;
+}
+
+.cv-entry-heading p,
+.cv-entry-heading span {
+  color: #646970;
+  font-size: 0.92rem;
+  margin: 0.2rem 0 0;
+}
+
+.cv-entry-heading span {
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+.cv-entry ul,
+.cv-skill-list {
+  color: #3f444a;
+  line-height: 1.58;
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.cv-entry li + li,
+.cv-skill-list li + li {
+  margin-top: 0.45rem;
+}
+
 .gallery-header {
   border-bottom: 1px solid #d9dee3;
   margin: 2.5rem 0 1.5rem;
@@ -412,6 +533,10 @@ body.lightbox-open {
 }
 
 @media (max-width: 991px) {
+  .cv-layout {
+    grid-template-columns: 1fr;
+  }
+
   .photo-gallery {
     column-count: 2;
   }
@@ -436,6 +561,28 @@ body.lightbox-open {
   .site-footer-inner {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .cv {
+    padding-top: 2rem;
+  }
+
+  .cv-hero h1 {
+    font-size: 2.15rem;
+  }
+
+  .cv-section {
+    padding: 1.1rem;
+  }
+
+  .cv-entry-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .cv-entry-heading span {
+    text-align: left;
   }
 
   .gallery-header {
