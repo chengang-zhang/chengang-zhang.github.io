@@ -56,6 +56,10 @@ body {
   padding: 0; 
 }
 
+body.lightbox-open {
+  overflow: hidden;
+}
+
 .home,
 .projects,
 .cv,
@@ -184,15 +188,35 @@ body {
   width: 100%;
 }
 
-.photo-card img {
+.photo-card-button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: zoom-in;
+  display: block;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+
+.photo-card-button:focus-visible {
+  outline: 3px solid #8f9399;
+  outline-offset: 3px;
+}
+
+.photo-card-button img {
   display: block;
   height: auto;
   transition: transform 180ms ease, filter 180ms ease;
   width: 100%;
 }
 
-.photo-card:hover img,
-.photo-card:focus-within img {
+.photo-card:hover .photo-card-button img,
+.photo-card:focus-within .photo-card-button img {
   filter: brightness(0.72);
   transform: scale(1.025);
 }
@@ -232,6 +256,148 @@ body {
   font-size: 0.9rem;
   line-height: 1.35;
   margin: 0;
+}
+
+.photo-title {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.photo-meta {
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.photo-lightbox {
+  align-items: center;
+  background: rgba(18, 20, 23, 0.78);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 2rem;
+  position: fixed;
+  z-index: 20;
+}
+
+.lightbox-content {
+  background: #f7f7f5;
+  border-radius: 8px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  margin: 0;
+  max-width: min(84rem, 86vw);
+  overflow: hidden;
+  position: relative;
+  width: fit-content;
+}
+
+.lightbox-content img {
+  display: block;
+  max-height: 78vh;
+  max-width: min(84rem, 86vw);
+  object-fit: contain;
+  width: auto;
+}
+
+.lightbox-content figcaption {
+  align-items: baseline;
+  background: linear-gradient(
+    to top,
+    rgba(18, 20, 23, 0.92),
+    rgba(18, 20, 23, 0.68) 70%,
+    rgba(18, 20, 23, 0)
+  );
+  bottom: 0;
+  color: #f8fafc;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  left: 0;
+  padding: 3rem 1rem 1rem;
+  position: absolute;
+  right: 0;
+}
+
+.lightbox-content figcaption strong {
+  font-size: 1rem;
+  font-weight: 650;
+}
+
+.lightbox-content figcaption span {
+  color: #c9cdd2;
+  font-size: 0.92rem;
+}
+
+.lightbox-close {
+  align-items: center;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: #f8fafc;
+  display: inline-flex;
+  font: inherit;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.lightbox-close:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.lightbox-close:focus-visible,
+.lightbox-nav:focus-visible {
+  outline: 3px solid rgba(247, 247, 245, 0.6);
+  outline-offset: 3px;
+}
+
+.lightbox-close {
+  font-size: 2.25rem;
+  height: 2.75rem;
+  position: fixed;
+  right: 1.5rem;
+  top: 1.5rem;
+  width: 2.75rem;
+  z-index: 21;
+}
+
+.lightbox-nav {
+  align-items: center;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: #f8fafc;
+  display: inline-flex;
+  font-size: 2.4rem;
+  height: 5rem;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+  position: fixed;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+  top: 50%;
+  transform: translateY(-50%);
+  transition: color 160ms ease, transform 160ms ease;
+  width: 4rem;
+  z-index: 21;
+}
+
+.lightbox-nav:hover {
+  color: #ffffff;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.lightbox-nav-previous {
+  left: 2rem;
+}
+
+.lightbox-nav-next {
+  right: 2rem;
 }
 
 @media (hover: none) {
@@ -282,5 +448,37 @@ body {
 
   .photo-gallery {
     column-count: 1;
+  }
+
+  .photo-lightbox {
+    padding: 1rem;
+  }
+
+  .lightbox-content {
+    max-width: calc(100vw - 2rem);
+  }
+
+  .lightbox-content img {
+    max-height: 68vh;
+    width: 100%;
+  }
+
+  .lightbox-close {
+    right: 1rem;
+    top: 1rem;
+  }
+
+  .lightbox-nav {
+    font-size: 2rem;
+    height: 4rem;
+    width: 3rem;
+  }
+
+  .lightbox-nav-previous {
+    left: 0.75rem;
+  }
+
+  .lightbox-nav-next {
+    right: 0.75rem;
   }
 }

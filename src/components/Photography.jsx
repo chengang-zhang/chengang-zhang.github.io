@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 const photos = [
   {
     title: "The Brooklyn Bridge",
@@ -146,6 +148,52 @@ const photos = [
 ];
 
 function Photography() {
+  const [activePhotoIndex, setActivePhotoIndex] = useState(null);
+  const activePhoto =
+    activePhotoIndex === null ? null : photos[activePhotoIndex];
+
+  const closePhoto = () => setActivePhotoIndex(null);
+  const showPreviousPhoto = () => {
+    setActivePhotoIndex((currentIndex) =>
+      currentIndex === null
+        ? currentIndex
+        : (currentIndex - 1 + photos.length) % photos.length
+    );
+  };
+  const showNextPhoto = () => {
+    setActivePhotoIndex((currentIndex) =>
+      currentIndex === null ? currentIndex : (currentIndex + 1) % photos.length
+    );
+  };
+
+  useEffect(() => {
+    if (activePhotoIndex === null) {
+      return undefined;
+    }
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        closePhoto();
+      }
+
+      if (event.key === "ArrowLeft") {
+        showPreviousPhoto();
+      }
+
+      if (event.key === "ArrowRight") {
+        showNextPhoto();
+      }
+    };
+
+    document.body.classList.add("lightbox-open");
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.classList.remove("lightbox-open");
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [activePhotoIndex]);
+
   return (
     <main className="photography">
       <div className="container">
@@ -156,17 +204,74 @@ function Photography() {
         <section className="photo-gallery" aria-label="Photography gallery">
           {photos.map((photo, index) => (
             <article className="photo-card" key={`${photo.src}-${index}`}>
-              <img src={photo.src} alt={photo.title} loading="lazy" />
-              <div className="photo-caption">
-                <h2>{photo.title}</h2>
-                <p>
-                  {photo.location} - {photo.date}
-                </p>
-              </div>
+              <button
+                className="photo-card-button"
+                onClick={() => setActivePhotoIndex(index)}
+                type="button"
+              >
+                <img src={photo.src} alt={photo.title} loading="lazy" />
+                <span className="photo-caption">
+                  <span className="photo-title">{photo.title}</span>
+                  <span className="photo-meta">
+                    {photo.location} - {photo.date}
+                  </span>
+                </span>
+              </button>
             </article>
           ))}
         </section>
       </div>
+
+      {activePhoto && (
+        <div
+          aria-label={`${activePhoto.title} enlarged view`}
+          aria-modal="true"
+          className="photo-lightbox"
+          onClick={(event) => {
+            if (event.target === event.currentTarget) {
+              closePhoto();
+            }
+          }}
+          role="dialog"
+        >
+          <button
+            aria-label="Close enlarged photo"
+            className="lightbox-close"
+            onClick={closePhoto}
+            type="button"
+          >
+            ×
+          </button>
+
+          <button
+            aria-label="Previous photo"
+            className="lightbox-nav lightbox-nav-previous"
+            onClick={showPreviousPhoto}
+            type="button"
+          >
+            ‹
+          </button>
+
+          <figure className="lightbox-content">
+            <img src={activePhoto.src} alt={activePhoto.title} />
+            <figcaption>
+              <strong>{activePhoto.title}</strong>
+              <span>
+                {activePhoto.location} - {activePhoto.date}
+              </span>
+            </figcaption>
+          </figure>
+
+          <button
+            aria-label="Next photo"
+            className="lightbox-nav lightbox-nav-next"
+            onClick={showNextPhoto}
+            type="button"
+          >
+            ›
+          </button>
+        </div>
+      )}
     </main>
   );
 }
