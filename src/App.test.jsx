@@ -9,6 +9,22 @@ test("renders personal site home page", () => {
   ).toBeInTheDocument();
 });
 
+test("renders project cards with repository links", () => {
+  window.history.pushState({}, "", "/projects");
+
+  render(<App />);
+
+  expect(
+    screen.getByRole("heading", { name: "TransitBar" }).closest("a")
+  ).toHaveAttribute("href", "https://github.com/chengang-zhang/TransitBar");
+  expect(
+    screen.getByRole("heading", { name: "TransitBar-GTFS" }).closest("a")
+  ).toHaveAttribute("href", "https://github.com/chengang-zhang/TransitBar-GTFS");
+  expect(
+    screen.getByRole("heading", { name: "Oneshots" }).closest("a")
+  ).toHaveAttribute("href", "https://github.com/Brauntt/Oneshots");
+});
+
 test("opens and navigates the photography lightbox", async () => {
   window.history.pushState({}, "", "/photography");
   const user = userEvent.setup();
